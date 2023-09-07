@@ -2,56 +2,36 @@
 body {
     background-repeat: no-repeat;
     background-image: linear-gradient(#1f1f1f, #222222);
-    height: 100vh;
-    
+    height: 100%;
+    margin: 0;
+    text-align: center;
 }
 
-/* for the section with my name */
-.title {
-    font-family: 'Lato', sans-serif;
+:root {
+    --font-family: 'Lato', sans-serif;
+    --intext-gradient: linear-gradient(150deg, rgb(190, 110, 255), rgb(116, 160, 255));
+    --border-debug: black;
+    --border-type-debug: ;
+}
+
+h1 { /* Name heading section */
+    font-family: var(--font-family);
     color: white;
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: 16px;
     font-weight: 10px;
 
-    width: fit-content;
-    padding: 5px 40px 5px 40px;
+    padding-top: 3vh;
+    padding-left: 5vw;
+
+    /* debug tools */
+    border: var(--border-debug);
+    border-style: var(--border-type-debug);
 }
 
-/* section of generic 'about me' text */
-.aboutme {
-    font-family: 'Lato', sans-serif;
-    color: white;
-
-    text-transform: uppercase;
-    font-size: 1.5em;
-    font-weight: 20px;
-    text-align: center;
-
-    padding: 5px 200px 5px 50px;
-}
-
-/* Pink to Blue colored gradient text */
-.intextgradient_PtoB {
-    font-family: 'Lato', sans-serif;
-    background-image: linear-gradient(150deg, rgb(190, 110, 255), rgb(116, 160, 255));
-    background-clip: text;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-
-    text-transform: uppercase;
-    font-size: 1.1em;
-    font-weight: 20px;
-    text-align: center;
-}
-
-/* view projects text and underlined */
-.viewprojects {
-    font-family: 'Lato', sans-serif;
+h2 { /* Subheadings */
+    font-family: var(--font-family);
     text-decoration: underline;
     text-underline-offset: 5px;
     color: white;
@@ -60,15 +40,133 @@ body {
     font-size: 1em;
     font-weight: 10px;
 
-    width: fit-content;
-    padding: 5px 40px 5px 40px;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+
+    /* debug tools */
+    border: var(--border-debug);
+    border-style: var(--border-type-debug);
 }
 
-/* copyright at bottom of page*/
-.copyright {
-    font-family: 'Lato', sans-serif;
+h3 { /* Subheadings categories */
+    font-family: var(--font-family);
+    background-image: var(--intext-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 10px;
+
+    /* debug tools */
+    border: var(--border-debug);
+    border-style: var(--border-type-debug);
+}
+
+h4 { /* Subheadings categories titles */
+    font-family: var(--font-family);
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    padding-left: 20vw;
+    list-style-type: none;
+
+    /* debug tools */
+    border: var(--border-debug);
+    border-style: var(--border-type-debug);
+}
+
+p, ul, li{ /* paragraphs and lists */
+    font-family: var(--font-family);
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    padding-left: 10vw;
+    list-style-type: none;
+
+    /* debug tools */
+    border: var(--border-debug);
+    border-style: var(--border-type-debug);
+}
+
+.aboutme { /* section of generic 'about me' text */
+    font-family: var(--font-family);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 20px;
+    text-align: center;
+    
+    padding-right: 25vw;
+    padding-left: 5vw;
+
+    /* debug tools */
+    border: var(--border-debug);
+    border-style: var(--border-type-debug);
+}
+
+.intextgradient_PtoB { /* Pink to Blue colored gradient text */
+    font-family: var(--font-family);
+    background-image: var(--intext-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 20px;
+    text-align: center;
+}
+
+i { /* icon formatting */
+    font-size: 35px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+
+    background-image: var(--intext-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+
+    /* debug tools */
+    border: var(--border-debug);
+    border-style: var(--border-type-debug);
+}
+
+footer { /* copyright text in footer*/
+    font-family: var(--font-family);
     color: white;
     font-size: 0.8rem;
-    text-align: center;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
 
+    /* debug tools */
+    border: var(--border-debug);
+    border-style: var(--border-type-debug);
+}
+
+.grid {
+    font-family: var(--font-family);
+
+    /* debug tools */
+    border: var(--border-debug);
+    border-style: var(--border-type-debug);
+    
+    padding-left: 1vw;
+    padding-right: 1vw;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 100px;
+    gap: 1vh 1vw;
+    place-items: center
 }
