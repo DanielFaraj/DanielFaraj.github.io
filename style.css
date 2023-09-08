@@ -1,17 +1,36 @@
-/* mostly for background color */
-html {
+/* 
+WARNING, YOU HAVE ENTERED UNAUTHORISED AIRSPACE. 
+TRESPASSERS WILL HAVE TO GIVE ME A JOB TO COMPLY.
+FAILURE TO COMPLY RESULTS IN SAD MAN.
+*/
+
+html { /* mostly for background color */
     scroll-snap-type: y mandatory;
     scroll-snap-stop: always;
     scroll-padding-top: 5vh;
     scroll-behavior: smooth;
+    background-color: #1f1f1f;
 }
 
 body {
     background-repeat: no-repeat;
-    background-image: linear-gradient(#1f1f1f, #222222);
     height: 100%;
-    margin: 0;
     text-align: center;
+    color: white;
+}
+
+.dark-mode {
+    background-image: linear-gradient(#1f1f1f, #222222);
+    color: #ffffff;
+}
+.light-mode {
+    background-image: linear-gradient(#ffffff, #f0f0f0);
+    color: #000000;
+}
+
+button {
+    border: none;
+    background: none;
 }
 
 section {
@@ -20,14 +39,13 @@ section {
 }
 
 nav {
-    display: block;
+    position: fixed;
     height: 5vh;
-    color: white;
-    font-size: 40px;
+    font-size: 2.5rem;
     padding-top: 3vh;
 }
 
-:root { /* used to make variables */
+:root { /* use to make variables */
     --font-family: 'Lato', sans-serif;
     --intext-gradient: linear-gradient(150deg, rgb(190, 110, 255), rgb(116, 160, 255));
     --font-color-darkmode: white;
@@ -39,12 +57,10 @@ nav {
 
 h1 { /* Name heading section */
     font-family: var(--font-family);
-    color: white;
     text-align: left;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 10px;
     padding-left: 3vw;
-    position: fixed;
     /* debug tools */
     border: var(--border-debug);
     border-style: var(--border-type-debug);
@@ -52,7 +68,6 @@ h1 { /* Name heading section */
 
 .aboutme { /* section of generic 'about me' text */
     font-family: var(--font-family);
-    color: white;
     text-transform: uppercase;
     font-size: 1.8em;
     font-weight: 20px;
@@ -67,7 +82,6 @@ h1 { /* Name heading section */
 
 h2 { /* Subheadings */
     font-family: var(--font-family);
-    color: white;
     text-align: left;
     font-size: 1.5rem;
     font-weight: 10px;
@@ -89,7 +103,7 @@ h3 { /* Subheadings categories */
     -moz-text-fill-color: transparent;
     text-align: center;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 10px;
     /* debug tools */
     border: var(--border-debug);
@@ -98,10 +112,8 @@ h3 { /* Subheadings categories */
 
 h4 { /* Subheadings categories titles */
     font-family: var(--font-family);
-    color: rgb(255, 255, 255);
     text-decoration: none;
     list-style-type: none;
-    padding-left: 20px;
     /* debug tools */
     border: var(--border-debug);
     border-style: var(--border-type-debug);
@@ -109,18 +121,14 @@ h4 { /* Subheadings categories titles */
 
 h5 {
     font-family: var(--font-family);
-    color: white;
-    padding-left: 20px;
 }
 
 p {
     font-family: var(--font-family);
-    color: white;
 } 
 
 ul, li{ /* paragraphs and lists */
     font-family: var(--font-family);
-    color: rgb(255, 255, 255);
     font-weight: normal;
     text-decoration: none;
     text-align: left;
@@ -131,38 +139,17 @@ ul, li{ /* paragraphs and lists */
     border-style: var(--border-type-debug);
 }
 
-.intextgradient_PtoB { /* Pink to Blue colored gradient text */
-    font-family: var(--font-family);
+.intextgradient { /* pink to blue colored gradient text */
     background-image: var(--intext-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-    text-transform: uppercase;
-    font-size: 1em;
-    font-weight: 20px;
-    text-align: center;
 }
 
-i { /* icon formatting */
+i { /* icons */
     font-size: 2.5rem;
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
-    background-image: var(--intext-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-    /* debug tools */
-    border: var(--border-debug);
-    border-style: var(--border-type-debug);
-}
-
-.i2 { /* icon formatting */
-    font-size: 35px;
     padding: 10px;
     text-align: center;
     text-decoration: none;
@@ -177,9 +164,20 @@ i { /* icon formatting */
     border-style: var(--border-type-debug);
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 40;
+}
+
+a { /* hyperlinks */
+    text-decoration: none;
+}
+
 footer { /* copyright text in footer*/
     font-family: var(--font-family);
-    color: white;
     font-size: 0.8rem;
     padding-top: 3vh;
     padding-bottom: 3vh;
@@ -194,12 +192,12 @@ footer { /* copyright text in footer*/
     border: var(--border-debug);
     border-style: var(--border-type-debug);
 
-    padding-left: 20vw;
-    padding-right: 20vw;
-    gap: 3vh 3vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    gap: 3vw 3vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 300px;
+    grid-template-columns: 40vw 40vw;
+    grid-template-rows: 40vh;
     place-items: center
 }
 
@@ -209,17 +207,15 @@ footer { /* copyright text in footer*/
     padding: 2vw;
     text-align: left;
     font-family: var(--font-family);
-    color: white;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
 }
 
 .griditemtextgradient {
-    background-color: darkgray;
     padding: 20px;
     text-align: center;
     font-family: var(--font-family);
-    font-size: 20px;
+    font-size: 1.5rem;
     text-transform: uppercase;
     background-image: var(--intext-gradient);
     background-clip: text;
