@@ -1,13 +1,17 @@
 /* mostly for background color */
+html {
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+    scroll-padding-top: 5vh;
+    scroll-behavior: smooth;
+}
+
 body {
     background-repeat: no-repeat;
     background-image: linear-gradient(#1f1f1f, #222222);
     height: 100%;
     margin: 0;
-    padding: 0;
     text-align: center;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
 }
 
 section {
@@ -15,9 +19,20 @@ section {
     scroll-snap-align: start;
 }
 
-:root {
+nav {
+    display: block;
+    height: 5vh;
+    color: white;
+    font-size: 40px;
+    padding-top: 3vh;
+}
+
+:root { /* used to make variables */
     --font-family: 'Lato', sans-serif;
     --intext-gradient: linear-gradient(150deg, rgb(190, 110, 255), rgb(116, 160, 255));
+    --font-color-darkmode: white;
+    --font-color-lightmode: black;
+    /* debug variables */
     --border-debug: black;
     --border-type-debug: ;
 }
@@ -28,12 +43,23 @@ h1 { /* Name heading section */
     text-align: left;
     font-size: 24px;
     font-weight: 10px;
-
-    padding-top: 3vh;
     padding-left: 3vw;
-    padding-bottom: 10vh;
     position: fixed;
+    /* debug tools */
+    border: var(--border-debug);
+    border-style: var(--border-type-debug);
+}
 
+.aboutme { /* section of generic 'about me' text */
+    font-family: var(--font-family);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    font-weight: 20px;
+    text-align: center;
+    padding-top: 15vh;
+    padding-right: 25vw;
+    padding-left: 25vw;
     /* debug tools */
     border: var(--border-debug);
     border-style: var(--border-type-debug);
@@ -45,11 +71,9 @@ h2 { /* Subheadings */
     text-align: left;
     font-size: 1.5rem;
     font-weight: 10px;
-
     padding-top: 15vh;
     padding-bottom: 5vh;
     padding-left: 20vw;
-
     /* debug tools */
     border: var(--border-debug);
     border-style: var(--border-type-debug);
@@ -63,12 +87,10 @@ h3 { /* Subheadings categories */
     -webkit-text-fill-color: transparent; 
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-
     text-align: center;
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 10px;
-
     /* debug tools */
     border: var(--border-debug);
     border-style: var(--border-type-debug);
@@ -80,7 +102,6 @@ h4 { /* Subheadings categories titles */
     text-decoration: none;
     list-style-type: none;
     padding-left: 20px;
-
     /* debug tools */
     border: var(--border-debug);
     border-style: var(--border-type-debug);
@@ -105,24 +126,6 @@ ul, li{ /* paragraphs and lists */
     text-align: left;
     line-height:180%;
     list-style-type: none;
-
-    /* debug tools */
-    border: var(--border-debug);
-    border-style: var(--border-type-debug);
-}
-
-.aboutme { /* section of generic 'about me' text */
-    font-family: var(--font-family);
-    color: white;
-    text-transform: uppercase;
-    font-size: 1.5em;
-    font-weight: 20px;
-    text-align: center;
-    
-    padding-top: 25vh;
-    padding-right: 25vw;
-    padding-left: 25vw;
-
     /* debug tools */
     border: var(--border-debug);
     border-style: var(--border-type-debug);
@@ -136,7 +139,6 @@ ul, li{ /* paragraphs and lists */
     -webkit-text-fill-color: transparent; 
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-
     text-transform: uppercase;
     font-size: 1em;
     font-weight: 20px;
@@ -144,18 +146,16 @@ ul, li{ /* paragraphs and lists */
 }
 
 i { /* icon formatting */
-    font-size: 1rem;
+    font-size: 2.5rem;
     padding: 5px;
     text-align: center;
     text-decoration: none;
-
     background-image: var(--intext-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-
     /* debug tools */
     border: var(--border-debug);
     border-style: var(--border-type-debug);
@@ -166,14 +166,12 @@ i { /* icon formatting */
     padding: 10px;
     text-align: center;
     text-decoration: none;
-
     background-image: var(--intext-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-
     /* debug tools */
     border: var(--border-debug);
     border-style: var(--border-type-debug);
@@ -185,7 +183,6 @@ footer { /* copyright text in footer*/
     font-size: 0.8rem;
     padding-top: 3vh;
     padding-bottom: 3vh;
-
     /* debug tools */
     border: var(--border-debug);
     border-style: var(--border-type-debug);
@@ -193,19 +190,16 @@ footer { /* copyright text in footer*/
 
 .grid {
     font-family: var(--font-family);
-
     /* debug tools */
     border: var(--border-debug);
     border-style: var(--border-type-debug);
-    
+
     padding-left: 20vw;
     padding-right: 20vw;
     gap: 3vh 3vw;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 300px;
-
     place-items: center
 }
 
@@ -227,7 +221,6 @@ footer { /* copyright text in footer*/
     font-family: var(--font-family);
     font-size: 20px;
     text-transform: uppercase;
-
     background-image: var(--intext-gradient);
     background-clip: text;
     -webkit-background-clip: text;
