@@ -1,17 +1,23 @@
 // Javascipt tings
 
-// select the favicon 👉
-const faviconEl = document.querySelector('link[rel="icon"]')
+// selectors
+const themeToggleBtn = document.querySelector('.theme-toggle');
 
-// watch for changes 🕵️
-const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-mediaQuery.addEventListener('change', themeChange)
+// state
+const theme = localStorage.getItem('theme');
 
-// listener 👂
-function themeChange(event) {
-  if (event.matches) {
-    faviconEl.setAttribute('href', 'favicon-dark.png')
+// on mount
+theme && document.body.classList.add(theme);
+
+// handlers
+const handleThemeToggle = () => {
+  document.body.classList.toggle('dark-mode');
+  if (document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark-mode');
   } else {
-    faviconEl.setAttribute('href', 'favicon-light.png')
+    localStorage.removeItem('theme');
   }
-}
+};
+
+// events
+themeToggleBtn.addEventListener('click', handleThemeToggle);

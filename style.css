@@ -4,20 +4,43 @@ TRESPASSERS WILL HAVE TO GIVE ME A JOB TO COMPLY.
 FAILURE TO COMPLY RESULTS IN SAD MAN.
 */
 
+:root { /* use to make variables */
+    --primary-color: rgb(190, 110, 255);
+    --secondary-color: rgb(116, 160, 255);
+    --intext-gradient: linear-gradient(150deg, var(--primary-color), var(--secondary-color));
+    /* --dark-mode-color: linear-gradient(#1f1f1f, #191919);
+    --light-mode-color: linear-gradient(#ffffff, #f0f0f0); */
+    --dark-mode-dark: #222222;
+    --dark-mode-light: #f1f5f9;
+    /* debug variables */
+    --border-debug: ; /* use solid to turn on */
+}
+
+.dark-mode {
+    --dark-mode-light: #222222;
+    --dark-mode-dark: #f1f5f9;
+}
+
+.theme-toggle {
+    width: 10rem;
+    height: 10rem;
+}
+
 html { /* mostly for background color */
     scroll-snap-type: y mandatory;
     scroll-snap-stop: always;
     scroll-padding-top: 5vh;
     scroll-behavior: smooth;
-    background-color: #1f1f1f;
+    height: 100%; /* moved from body 10/9/23 */
 }
 
 body {
     background-repeat: no-repeat;
-    background-image: linear-gradient(#1f1f1f, #191919);
-    height: 100%;
+    /* background-image: var(--dark-mode-colorS); */
+    background-color: var(--dark-mode-light);
+    color: var(--dark-mode-dark);
+    transition: background-color 2s;
     text-align: center;
-    color: white;
     font-family: 'Lato', sans-serif;
     animation: fadeInAnimation ease 1.5s;
     animation-iteration-count: 1;
@@ -29,16 +52,20 @@ body {
     100% {opacity: 1;}
 }
 
-.dark-mode {
-    background-image: linear-gradient(#1f1f1f, #191919);
-    color: #ffffff;}
-.light-mode {
-    background-image: linear-gradient(#ffffff, #f0f0f0);
-    color: #000000;}
-
 button {
+    padding: 0;
     border: none;
     background: none;
+    cursor: pointer;
+    color: inherit;
+  }
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
 }
 
 section {
@@ -51,15 +78,6 @@ nav {
     height: 5vh;
     font-size: 2.5rem;
     padding-top: 3vh;
-}
-
-:root { /* use to make variables */
-    --primary-color: rgb(190, 110, 255);
-    --secondary-color: rgb(116, 160, 255);
-    --intext-gradient: linear-gradient(150deg, var(--primary-color), var(--secondary-color));
-    /* debug variables */
-    --border-debug: black;
-    --border-type-debug: ;
 }
 
 ::selection {
@@ -84,8 +102,7 @@ nav {
     padding-right: 25vw;
     padding-left: 25vw;
     /* debug tools */
-    border: var(--border-debug);
-    border-style: var(--border-type-debug);
+    border-style: var(--border-debug);
 }
 
 h1 { /* Name heading section */
@@ -94,8 +111,7 @@ h1 { /* Name heading section */
     font-weight: 10px;
     padding-left: 3vw;
     /* debug tools */
-    border: var(--border-debug);
-    border-style: var(--border-type-debug);
+    border-style: var(--border-debug);
 }
 
 h2 { /* Subheadings */
@@ -106,8 +122,7 @@ h2 { /* Subheadings */
     padding-bottom: 2vh;
     padding-left: 20vw;
     /* debug tools */
-    border: var(--border-debug);
-    border-style: var(--border-type-debug);
+    border-style: var(--border-debug);
 }
 
 h3 { /* Subheadings categories */
@@ -122,20 +137,14 @@ h3 { /* Subheadings categories */
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
     /* debug tools */
-    border: var(--border-debug);
-    border-style: var(--border-type-debug);
+    border-style: var(--border-debug);
 }
 
 h4 { /* Subheadings categories titles */
     text-decoration: none;
     list-style-type: none;
     /* debug tools */
-    border: var(--border-debug);
-    border-style: var(--border-type-debug);
-}
-
-h5 {
-
+    border-style: var(--border-debug);
 }
 
 ul, li{ /* paragraphs and lists */
@@ -145,8 +154,7 @@ ul, li{ /* paragraphs and lists */
     line-height:180%;
     list-style-type: none;
     /* debug tools */
-    border: var(--border-debug);
-    border-style: var(--border-type-debug);
+    border-style: var(--border-debug);
 }
 
 i { /* icons */
@@ -161,8 +169,7 @@ i { /* icons */
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
     /* debug tools */
-    border: var(--border-debug);
-    border-style: var(--border-type-debug);
+    border-style: var(--border-debug);
 }
 
 a { /* hyperlinks */
@@ -174,14 +181,12 @@ footer { /* copyright text in footer*/
     padding-top: 3vh;
     padding-bottom: 3vh;
     /* debug tools */
-    border: var(--border-debug);
-    border-style: var(--border-type-debug);
+    border-style: var(--border-debug);
 }
 
 .grid {
     /* debug tools */
-    border: var(--border-debug);
-    border-style: var(--border-type-debug);
+    border-style: var(--border-debug);
 
     padding-left: 10vw;
     padding-right: 10vw;
@@ -199,17 +204,4 @@ footer { /* copyright text in footer*/
     text-align: left;
     font-size: 1rem;
     font-weight: bold;
-}
-
-.griditemtextgradient {
-    padding: 20px;
-    text-align: center;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    background-image: var(--intext-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
 }
