@@ -22,8 +22,12 @@ FAILURE TO COMPLY RESULTS IN SAD MAN.
 }
 
 .theme-toggle {
-    width: 10rem;
-    height: 10rem;
+    font-size: clamp(1rem,5vw,2rem);
+    position: absolute;
+    top: 3.5vh;
+    right: 20px;
+    /* debug tools */
+    border-style: var(--border-debug);
 }
 
 html { /* mostly for background color */
@@ -46,6 +50,7 @@ body {
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     scroll-snap-stop: always;
+    font-size: 3vw;
 }
 
 @keyframes fadeInAnimation {
@@ -76,9 +81,12 @@ section {
 
 nav {
     position: fixed;
-    height: 5vh;
-    font-size: 2.5rem;
-    padding-top: 3vh;
+    font-size: 2.5em;
+    width: calc(100vw - 50px);
+    margin-left: 2vw;
+    margin-right: 2vw;
+    /* debug tools */
+    border-style: var(--border-debug);
 }
 
 ::selection {
@@ -96,32 +104,31 @@ nav {
 }
 
 .aboutme { /* section of generic 'about me' text */
-    font-size: 1.8em;
+    font-size: clamp(1rem, 5vw, 2rem);
     font-weight: 500;
     text-align: center;
-    padding-top: 15vh;
-    padding-right: 25vw;
-    padding-left: 25vw;
+    margin-top: clamp(5vh, 10vh, 30vh);
+    margin-left: clamp(2vw, 5vw, calc(10vw+500px));
+    margin-right: clamp(2vw, 5vw, 10vw);
     /* debug tools */
     border-style: var(--border-debug);
 }
 
 h1 { /* Name heading section */
     text-align: left;
-    font-size: 1.5rem;
+    font-size: clamp(1rem,5vw,2rem);
     font-weight: 10px;
-    padding-left: 3vw;
     /* debug tools */
     border-style: var(--border-debug);
 }
 
 h2 { /* Subheadings */
     text-align: left;
-    font-size: 1.5rem;
+    font-size: clamp(1rem,5vw,2rem);
     font-weight: 10px;
-    padding-top: 15vh;
-    padding-bottom: 2vh;
-    padding-left: 20vw;
+    margin-top: 15vh;
+    margin-bottom: 2vh;
+    margin-left: 20vw;
     /* debug tools */
     border-style: var(--border-debug);
 }
@@ -129,7 +136,7 @@ h2 { /* Subheadings */
 h3 { /* Subheadings categories */
     text-align: center;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 1em;
     font-weight: 10px;
     background-image: var(--intext-gradient);
     background-clip: text;
@@ -150,6 +157,7 @@ h4 { /* Subheadings categories titles */
 
 ul, li{ /* paragraphs and lists */
     font-weight: normal;
+    font-size: clamp(0.25rem, 0.8rem, 2rem);
     text-decoration: none;
     text-align: left;
     line-height:180%;
@@ -159,8 +167,8 @@ ul, li{ /* paragraphs and lists */
 }
 
 i { /* icons */
-    font-size: 2.5rem;
-    padding: 10px;
+    font-size: clamp(1rem, 5vw, 2rem);
+    margin: 10px;
     text-align: center;
     text-decoration: none;
     background-image: var(--intext-gradient);
@@ -178,9 +186,9 @@ a { /* hyperlinks */
 }
 
 footer { /* copyright text in footer*/
-    font-size: 0.8rem;
-    padding-top: 3vh;
-    padding-bottom: 3vh;
+    font-size: clamp(.5rem, 2.5vw, 1rem);
+    margin-top: 3vh;
+    margin-bottom: 3vh;
     /* debug tools */
     border-style: var(--border-debug);
 }
@@ -189,19 +197,19 @@ footer { /* copyright text in footer*/
     /* debug tools */
     border-style: var(--border-debug);
 
-    padding-left: 10vw;
-    padding-right: 10vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
     gap: 3vw 3vh;
     display: grid;
-    grid-template-columns: 40vw 40vw;
-    grid-template-rows: 40vh;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
     place-items: center
 }
 
 .griditem {
     border-radius: 5px;
     border: rgb(71, 71, 71) solid 1px;
-    padding: 2vw;
+    margin: clamp(0.5vw, 10px, 20px);
     text-align: left;
     font-size: 1rem;
     font-weight: bold;

@@ -1,23 +1,17 @@
 // Javascipt tings
 
-// selectors
-const themeToggleBtn = document.querySelector('.theme-toggle');
+//Dark Mode
+  const themeToggleBtn = document.querySelector('.theme-toggle');  // selectors
+  const theme = localStorage.getItem('theme');  // state
+  theme && document.body.classList.add(theme);  // on mount
 
-// state
-const theme = localStorage.getItem('theme');
+  const handleThemeToggle = () => {  // handlers
+    document.body.classList.toggle('dark-mode');
+    
+    if (document.body.classList.contains('dark-mode')) 
+      {localStorage.setItem('theme', 'dark-mode');} 
+    else 
+      {localStorage.removeItem('theme');}
+  };
 
-// on mount
-theme && document.body.classList.add(theme);
-
-// handlers
-const handleThemeToggle = () => {
-  document.body.classList.toggle('dark-mode');
-  if (document.body.classList.contains('dark-mode')) {
-    localStorage.setItem('theme', 'dark-mode');
-  } else {
-    localStorage.removeItem('theme');
-  }
-};
-
-// events
-themeToggleBtn.addEventListener('click', handleThemeToggle);
+  themeToggleBtn.addEventListener('click', handleThemeToggle);  // events
