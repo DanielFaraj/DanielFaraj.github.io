@@ -21,15 +21,6 @@ FAILURE TO COMPLY RESULTS IN SAD MAN.
     --dark-mode-dark: #f1f5f9;
 }
 
-.theme-toggle {
-    font-size: clamp(1rem,5vw,2rem);
-    position: absolute;
-    top: 3.5vh;
-    right: 20px;
-    /* debug tools */
-    border-style: var(--border-debug);
-}
-
 html { /* mostly for background color */
     scroll-snap-type: y mandatory;
     scroll-snap-stop: always;
@@ -74,6 +65,15 @@ button {
     'opsz' 24
 }
 
+.theme-toggle {
+    font-size: clamp(1rem,5vw,2rem);
+    position: absolute;
+    top: 3.5vh;
+    right: 20px;
+    /* debug tools */
+    border-style: var(--border-debug);
+}
+
 section {
     display: flex;
     scroll-snap-align: start;
@@ -109,7 +109,7 @@ nav {
     text-align: center;
     margin-top: clamp(5vh, 10vh, 30vh);
     margin-left: clamp(2vw, 5vw, calc(10vw+500px));
-    margin-right: clamp(2vw, 5vw, 10vw);
+    margin-right: clamp(2vw, 5vw, calc(10vw+500px));
     /* debug tools */
     border-style: var(--border-debug);
 }
@@ -209,7 +209,7 @@ footer { /* copyright text in footer*/
 .griditem {
     border-radius: 5px;
     border: rgb(71, 71, 71) solid 1px;
-    margin: clamp(0.5vw, 10px, 20px);
+    padding: clamp(0.5vw, 10px, 20px);
     text-align: left;
     font-size: 1rem;
     font-weight: bold;
